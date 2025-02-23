@@ -18,6 +18,6 @@ public class OrderController {
         String productServiceUrl = "http://localhost:8083/product?product_name=" + product_name;
         String userInfo = restTemplate.getForObject(userServiceUrl, String.class);
         String productInfo = restTemplate.getForObject(productServiceUrl, String.class);
-        return "订单创建者是：" + userInfo + "\n产品信息： " + productInfo;
+        return "订单创建者是：" + userInfo + "<p>产品信息： " + productInfo + "</p>";
     }
 }

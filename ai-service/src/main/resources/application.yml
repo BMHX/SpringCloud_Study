@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ai-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+aliyun:
+  api-key: sk-ac606c0a7a9e4482bbf034b82c517970 # 在阿里云控制台获取
