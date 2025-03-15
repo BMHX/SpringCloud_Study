@@ -8,6 +8,7 @@ import top.zhijie.userservice.Entity.User;
 import top.zhijie.userservice.Mapper.UserMapper;
 import top.zhijie.userservice.Service.UserService;
 
+@RequestMapping("/user")
 @RestController
 public class UserController {
 
@@ -27,7 +28,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
-    public User getUserById(@RequestParam Integer id) {
+    public User getUserById(@PathVariable Integer id) {
         return userService.getUserById(id);
     }
 

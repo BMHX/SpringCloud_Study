@@ -1,12 +1,8 @@
-server:
-  port: 8081
-
 spring:
-  application:
-    name: user-service
+  profiles:
+    active: dev
   cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        username: nacos
-        password: nacos
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 8888

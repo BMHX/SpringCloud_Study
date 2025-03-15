@@ -10,5 +10,6 @@ spring:
         server-addr: localhost:8848
         username: nacos
         password: nacos
-aliyun:
+ai:
   api-key: sk-ac606c0a7a9e4482bbf034b82c517970 # 在阿里云控制台获取
+  api-url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation

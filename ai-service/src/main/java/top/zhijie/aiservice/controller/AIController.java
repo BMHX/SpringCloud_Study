@@ -18,13 +18,13 @@ import java.net.http.HttpResponse;
 @RestController
 public class AIController {
 
-    @Value("${aliyun.api-key}")
+    @Value("${ai.api-key}")
     private String API_KEY ; // 从配置读取API密钥
     private static final String ENDPOINT = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation";
 
     @GetMapping("/ask")
     public String askQuestion() throws IOException, InterruptedException {
-        String prompt = "你好，请介绍一下你自己";
+        String prompt = "你好";
 
         String requestBody = String.format("""
     {

@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        file-extension: yaml
+        group: zjq
+        shared-configs:
+          - data-id: common-service-${spring.profiles.active}.yaml
+            group: zjq
+            refresh: true
+          - data-id: database-config-${spring.profiles.active}.yaml
+            group: zjq
+            refresh: true
+          - data-id: redis-config-${spring.profiles.active}.yaml
+            group: zjq
+            refresh: true
+          - data-id: oss-config-${spring.profiles.active}.yaml
+            group: zjq
+            refresh: true
+          - data-id: key-config-${spring.profiles.active}.yaml
+            group: zjq
+            refresh: true
