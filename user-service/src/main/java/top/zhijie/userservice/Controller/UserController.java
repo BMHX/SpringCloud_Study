@@ -1,10 +1,12 @@
 package top.zhijie.userservice.Controller;
 
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import top.zhijie.userservice.Entity.User;
+import top.zhijie.userservice.Mapper.UserMapper;
+import top.zhijie.userservice.Service.UserService;
 
 @RestController
 public class UserController {
@@ -21,4 +23,12 @@ public class UserController {
 
         return "user: " + username + "<p>Ai回复: " + AiInfo + PythonInfo;
     }
+    @Resource
+    private UserService userService;
+
+    @GetMapping("/{id}")
+    public User getUserById(@RequestParam Integer id) {
+        return userService.getUserById(id);
+    }
+
 }
